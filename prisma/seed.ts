@@ -45,11 +45,14 @@ async function main() {
     console.log("Found property:", property.id);
   }
 
-  // 3. Clear existing rooms
-  console.log("Clearing existing rooms...");
-  await prisma.room.deleteMany({
-    where: { floor: { propertyId: property.id } },
-  });
+  // 3. Clear existing data
+  console.log("Clearing existing data...");
+  await prisma.mealLog.deleteMany({});
+  await prisma.paymentSubmission.deleteMany({});
+  await prisma.maintenanceTask.deleteMany({});
+  await prisma.tenant.deleteMany({});
+  await prisma.bed.deleteMany({});
+  await prisma.room.deleteMany({});
 
   // 4. Create Floors
   const floorsData = [
@@ -82,8 +85,8 @@ async function main() {
   // 5. Create Rooms according to specific layout
   const roomDefinitions = [
     // Ground Floor
-    { floorNumber: 0, roomNumber: "g01", type: "TRIPLE", beds: 3, hasAC: true, baseRent: 7050 },
-    { floorNumber: 0, roomNumber: "g02", type: "TRIPLE", beds: 3, hasAC: true, baseRent: 7050 },
+    { floorNumber: 0, roomNumber: "g01", type: "TRIPLE", beds: 3, hasAC: true, baseRent: 7000 },
+    { floorNumber: 0, roomNumber: "g02", type: "TRIPLE", beds: 3, hasAC: true, baseRent: 7000 },
     { floorNumber: 0, roomNumber: "g03", type: "DOUBLE", beds: 2, hasAC: false, baseRent: 5500 },
     
     // First Floor

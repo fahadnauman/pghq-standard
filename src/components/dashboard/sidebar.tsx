@@ -63,7 +63,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           bg-gradient-to-b from-[#0f2e29] to-[#15473e] border-r border-slate-200/10
           flex flex-col
           transition-transform duration-200 ease-in-out
-          lg:translate-x-0 lg:static lg:z-auto
+          lg:translate-x-0 lg:sticky lg:top-0 lg:h-screen lg:z-40 lg:overflow-y-auto
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
