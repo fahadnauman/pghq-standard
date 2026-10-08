@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { PrismaClient } from "@prisma/client";
 import { Pool } from "pg";
 import { PrismaPg } from "@prisma/adapter-pg";
@@ -11,15 +12,15 @@ const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
-  console.log("Starting seed for pghq-standard-ipqa...");
+  console.log("Starting seed for Naalukettu Hostel...");
 
   // 1. Create a default owner user if not exists
   const owner = await prisma.user.upsert({
-    where: { email: "admin@ideal-hostel.com" },
+    where: { email: "admin@naalukettu.com" },
     update: {},
     create: {
-      name: "Ideal Admin",
-      email: "admin@ideal-hostel.com",
+      name: "Naalukettu Admin",
+      email: "admin@naalukettu.com",
       passwordHash: "hashed-password-here",
       phone: "+91 98765 00000",
     },
@@ -34,9 +35,9 @@ async function main() {
     property = await prisma.property.create({
       data: {
         ownerId: owner.id,
-        name: "Ideal Hostel",
+        name: "Naalukettu Hostel",
         address: "123 Main St",
-        city: "Kerala", // specific region implied by names
+        city: "Kerala",
       },
     });
     console.log("Created property:", property.id);
@@ -44,9 +45,15 @@ async function main() {
     console.log("Found property:", property.id);
   }
 
-  // 3. Create Floors
+  // 3. Clear existing rooms
+  console.log("Clearing existing rooms...");
+  await prisma.room.deleteMany({
+    where: { floor: { propertyId: property.id } },
+  });
+
+  // 4. Create Floors
   const floorsData = [
-    { number: 0, name: "Basement Floor" },
+    { number: 0, name: "Ground Floor" },
     { number: 1, name: "First Floor" },
     { number: 2, name: "Second Floor" },
   ];
@@ -72,33 +79,27 @@ async function main() {
   };
   console.log("Floors ensured.");
 
-  // 4. Create Rooms according to specific layout
+  // 5. Create Rooms according to specific layout
   const roomDefinitions = [
-    // Basement Floor
-    { floorNumber: 0, roomNumber: "R01", type: "DOUBLE", beds: 2 },
-    { floorNumber: 0, roomNumber: "R02", type: "DOUBLE", beds: 2 },
-    { floorNumber: 0, roomNumber: "R03", type: "TRIPLE", beds: 3 },
-    { floorNumber: 0, roomNumber: "R04", type: "SINGLE", beds: 1 },
-    { floorNumber: 0, roomNumber: "R05", type: "TRIPLE", beds: 3 },
+    // Ground Floor
+    { floorNumber: 0, roomNumber: "g01", type: "TRIPLE", beds: 3, hasAC: true, baseRent: 7050 },
+    { floorNumber: 0, roomNumber: "g02", type: "TRIPLE", beds: 3, hasAC: true, baseRent: 7050 },
+    { floorNumber: 0, roomNumber: "g03", type: "DOUBLE", beds: 2, hasAC: false, baseRent: 5500 },
     
     // First Floor
-    { floorNumber: 1, roomNumber: "R06", type: "DOUBLE", beds: 2 },
-    { floorNumber: 1, roomNumber: "R07", type: "DOUBLE", beds: 2 },
-    { floorNumber: 1, roomNumber: "R08", type: "DOUBLE", beds: 2 },
-    { floorNumber: 1, roomNumber: "R09", type: "DOUBLE", beds: 2 },
-    { floorNumber: 1, roomNumber: "R10", type: "SINGLE", beds: 1 },
+    { floorNumber: 1, roomNumber: "101", type: "TRIPLE", beds: 3, hasAC: false, baseRent: 4800 },
+    { floorNumber: 1, roomNumber: "102", type: "TRIPLE", beds: 3, hasAC: false, baseRent: 4800 },
+    { floorNumber: 1, roomNumber: "103", type: "TRIPLE", beds: 3, hasAC: false, baseRent: 4800 },
+    { floorNumber: 1, roomNumber: "104", type: "TRIPLE", beds: 3, hasAC: false, baseRent: 4800 },
+    { floorNumber: 1, roomNumber: "105", type: "TRIPLE", beds: 3, hasAC: false, baseRent: 4800 },
     
     // Second Floor
-    { floorNumber: 2, roomNumber: "R11", type: "DOUBLE", beds: 2 },
-    { floorNumber: 2, roomNumber: "R12", type: "DOUBLE", beds: 2 },
-    { floorNumber: 2, roomNumber: "R13", type: "DOUBLE", beds: 2 },
-    { floorNumber: 2, roomNumber: "R14", type: "DOUBLE", beds: 2 },
-    { floorNumber: 2, roomNumber: "R15", type: "DOUBLE", beds: 2 },
-    { floorNumber: 2, roomNumber: "R16", type: "DOUBLE", beds: 2 },
-    { floorNumber: 2, roomNumber: "R17", type: "DOUBLE", beds: 2 },
-    { floorNumber: 2, roomNumber: "R18", type: "DOUBLE", beds: 2 },
-    { floorNumber: 2, roomNumber: "R19", type: "DOUBLE", beds: 2 },
-    { floorNumber: 2, roomNumber: "R20", type: "DOUBLE", beds: 2 },
+    { floorNumber: 2, roomNumber: "201", type: "TRIPLE", beds: 3, hasAC: false, baseRent: 4800 },
+    { floorNumber: 2, roomNumber: "202", type: "TRIPLE", beds: 3, hasAC: false, baseRent: 4800 },
+    { floorNumber: 2, roomNumber: "203", type: "TRIPLE", beds: 3, hasAC: false, baseRent: 4800 },
+    { floorNumber: 2, roomNumber: "204", type: "TRIPLE", beds: 3, hasAC: false, baseRent: 4800 },
+    { floorNumber: 2, roomNumber: "205", type: "TRIPLE", beds: 3, hasAC: false, baseRent: 4800 },
+    { floorNumber: 2, roomNumber: "206", type: "TRIPLE", beds: 3, hasAC: false, baseRent: 4800 },
   ];
 
   for (const def of roomDefinitions) {
@@ -111,6 +112,8 @@ async function main() {
         floorId: floor.id,
         roomNumber: def.roomNumber,
         roomType: def.type as any,
+        hasAC: def.hasAC,
+        baseRent: def.baseRent,
         beds: {
           create: Array.from({ length: def.beds }).map((_, i) => ({
             bedNumber: i + 1,

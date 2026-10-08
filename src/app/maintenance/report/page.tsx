@@ -616,14 +616,14 @@ function MaintenanceReportForm() {
             )}
           </button>
           <p className="text-center text-[11px] text-slate-400 font-medium mt-2">
-            Instant owner dispatch · PGHQ Standard Hostels
+            Instant owner dispatch · Naalukettu Hostel
           </p>
         </div>
       </form>
 
       {/* ── Quick Footer ──────────────────────────────────── */}
       <div className="text-center space-y-1 text-xs text-slate-400">
-        <p>© {new Date().getFullYear()} PGHQ Standard · Automated Hostel Maintenance</p>
+        <p>© {new Date().getFullYear()} Naalukettu Hostel · Automated Hostel Maintenance</p>
         <p>Emergency? Contact the hostel warden or front desk directly.</p>
       </div>
     </div>

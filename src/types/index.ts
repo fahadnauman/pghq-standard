@@ -46,6 +46,8 @@ export interface Room {
   floorId: string;
   roomNumber: string;
   roomType: RoomType;
+  hasAC: boolean;
+  baseRent: number;
   beds: Bed[];
 }
 

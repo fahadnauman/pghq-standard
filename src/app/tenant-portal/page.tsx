@@ -20,7 +20,7 @@ export default function TenantPortal() {
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 mb-2">Tenant Self-Service Portal</h1>
           <p className="text-slate-600 leading-relaxed">
-            This is a live preview of the mobile experience your tenants see when they log into the PGHQ platform.
+            This is a live preview of the mobile experience your tenants see when they log into the Naalukettu Hostel platform.
           </p>
         </div>
         <div className="space-y-4 pt-4 border-t border-slate-300">

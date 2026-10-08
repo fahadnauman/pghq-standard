@@ -205,7 +205,7 @@ export default function TenantSheet({
                     <span>Call</span>
                   </a>
                   <a
-                    href={`https://wa.me/${tenant.phone.replace(/[^0-9]/g, "")}?text=Hi%20${encodeURIComponent(tenant.name)},%20this%20is%20from%20PGHQ%20regarding%20your%20room%20rent.`}
+                    href={`https://wa.me/${tenant.phone.replace(/[^0-9]/g, "")}?text=Hi%20${encodeURIComponent(tenant.name)},%20this%20is%20from%20Naalukettu%20Hostel%20regarding%20your%20room%20rent.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-slate-900 hover:bg-slate-800 active:scale-[0.98] text-white font-bold text-xs transition-default shadow-xs cursor-pointer min-h-[56px]"

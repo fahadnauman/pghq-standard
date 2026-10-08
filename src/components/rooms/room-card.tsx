@@ -37,11 +37,17 @@ export default function RoomCard({ room, onBedClick, onQrClick }: RoomCardProps)
             <DoorOpen className="w-4 h-4 text-slate-800" />
           </div>
           <div>
-            <h3 className="text-base font-extrabold text-slate-900 leading-none">
-              Room {room.roomNumber}
+            <h3 className="text-base font-extrabold text-slate-900 leading-none flex items-center justify-between">
+              <span>Room {room.roomNumber}</span>
             </h3>
-            <p className="text-xs font-semibold text-slate-500 mt-1">
-              {roomTypeLabels[room.roomType]}
+            <p className="text-xs font-semibold text-slate-500 mt-1 flex items-center gap-2">
+              <span>{roomTypeLabels[room.roomType]}</span>
+              {room.hasAC ? (
+                <span className="bg-sky-100 text-sky-700 px-1.5 py-0.5 rounded-[4px] text-[10px] leading-none uppercase tracking-wider">AC</span>
+              ) : (
+                <span className="bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded-[4px] text-[10px] leading-none uppercase tracking-wider">Non-AC</span>
+              )}
+              <span className="text-slate-800 font-bold ml-auto bg-slate-100/50 px-2 rounded-md">₹{room.baseRent}</span>
             </p>
           </div>
         </div>

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PGHQ Standard — PG & Hostel Management",
+  title: "Naalukettu Hostel Management",
   description:
     "Modern paying-guest and hostel management platform for property owners.",
 };

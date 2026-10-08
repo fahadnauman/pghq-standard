@@ -153,6 +153,8 @@ function room(
     floorId,
     roomNumber,
     roomType,
+    hasAC: roomType === "SINGLE" || roomType === "DOUBLE",
+    baseRent: 6000,
     beds: beds.map(([bedNum, status, tenantKey]) =>
       bed(roomId, bedNum, status, tenantKey)
     ),

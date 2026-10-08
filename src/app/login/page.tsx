@@ -89,7 +89,7 @@ export default function LoginPage() {
             <Building2 className="w-7 h-7" />
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-            PGHQ Standard
+            Naalukettu Hostel
           </h1>
           <p className="text-sm sm:text-base text-slate-600">
             Owner Management Dashboard · Direct Access
@@ -226,7 +226,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <p className="text-center text-xs text-slate-400">
-          © {new Date().getFullYear()} PGHQ Standard · Client Handoff Edition
+          © {new Date().getFullYear()} Naalukettu Hostel · Client Handoff Edition
         </p>
       </div>
     </div>

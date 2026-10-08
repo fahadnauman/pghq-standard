@@ -4,32 +4,32 @@
 
 :root {
   /* Surfaces */
-  --background: #f8fafc;        /* slate-50: clean crisp off-white canvas */
+  --background: #fdfbf7;        /* warm cream canvas */
   --surface: #ffffff;           /* pure white cards */
-  --surface-hover: #f1f5f9;     /* slate-100 */
-  --surface-active: #e2e8f0;    /* slate-200 */
+  --surface-hover: #f5f3ef;     /* light warm gray */
+  --surface-active: #ece9e2;    /* slightly darker warm gray */
   --surface-elevated: #ffffff;  /* sheets and modals */
 
-  /* Borders - High contrast, sharp definitions for middle-aged legibility */
-  --border: #e2e8f0;            /* slate-200 */
-  --border-light: #f1f5f9;      /* slate-100 */
-  --border-focus: #64748b;      /* slate-500 */
-  --border-strong: #cbd5e1;     /* slate-300 */
+  /* Borders */
+  --border: #e6e2da;            /* warm border */
+  --border-light: #f5f3ef;      
+  --border-focus: #8c736a;      
+  --border-strong: #d2ccc2;     
 
-  /* Text - High contrast deep slate tones */
-  --foreground: #0f172a;        /* slate-900: sharp dark text */
-  --muted: #334155;             /* slate-700: clear high-contrast secondary text */
-  --muted-foreground: #64748b;  /* slate-500: tertiary hints/timestamps */
+  /* Text - Deep wood brown tones */
+  --foreground: #4a3831;        /* dark wood text */
+  --muted: #735d53;             /* softer wood secondary text */
+  --muted-foreground: #9a8880;  /* tertiary hints */
 
   /* Accents */
-  --accent: #0f172a;            /* slate-900 */
-  --accent-foreground: #ffffff;
-  --accent-hover: #1e293b;      /* slate-800 */
+  --accent: #4a3831;            /* dark wood */
+  --accent-foreground: #fdfbf7;
+  --accent-hover: #3d2d27;      
 
-  /* Primary Brand */
-  --primary: #2563eb;           /* royal blue */
+  /* Primary Brand - Terracotta / Brick Red */
+  --primary: #b33924;           /* earthy terracotta */
   --primary-foreground: #ffffff;
-  --primary-hover: #1d4ed8;
+  --primary-hover: #962c1a;
 
   /* Semantic - Vibrant, high-contrast signals */
   --success: #16a34a;           /* green-600 */
@@ -47,16 +47,16 @@
   --danger-border: #fecaca;     /* red-200 */
   --danger-text: #7f1d1d;       /* red-900 */
 
-  --info: #2563eb;              /* blue-600 */
-  --info-light: #eff6ff;        /* blue-50 */
-  --info-border: #bfdbfe;       /* blue-200 */
-  --info-text: #1e3a8a;         /* blue-900 */
+  --info: #0284c7;              /* sky-600 */
+  --info-light: #f0f9ff;        /* sky-50 */
+  --info-border: #bae6fd;       /* sky-200 */
+  --info-text: #075985;         /* sky-900 */
 
   /* Sidebar */
-  --sidebar-bg: #ffffff;
-  --sidebar-border: #e2e8f0;
-  --sidebar-item-hover: #f8fafc;
-  --sidebar-item-active: #0f172a;
+  --sidebar-bg: #fdfbf7;
+  --sidebar-border: #e6e2da;
+  --sidebar-item-hover: #ffffff;
+  --sidebar-item-active: #b33924;
   --sidebar-item-active-text: #ffffff;
 
   /* Radius */

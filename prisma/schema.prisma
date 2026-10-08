@@ -103,6 +103,8 @@ model Room {
   floorId    String
   roomNumber String
   roomType   RoomType @default(DOUBLE)
+  hasAC      Boolean  @default(false)
+  baseRent   Float    @default(0)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 

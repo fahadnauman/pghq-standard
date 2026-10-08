@@ -471,7 +471,7 @@ function TenantPortalContent({ roomId }: { roomId: string }) {
           className="inline-flex items-center gap-1.5 text-slate-800 hover:text-blue-600 transition-colors"
         >
           <Building2 className="w-4 h-4" />
-          <span>PGHQ Owner Dashboard</span>
+          <span>Naalukettu Owner Dashboard</span>
         </Link>
         <span className="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">
           Live Mobile-First QR Hub
@@ -1246,7 +1246,7 @@ function TenantPortalContent({ roomId }: { roomId: string }) {
 
         {/* ── Footer ── */}
         <div className="p-3 bg-white border-t border-slate-200 text-center text-[10px] text-slate-400 font-medium">
-          PGHQ Standard · Ideal Hostel Door Portal · 24/7 Desk: {settings.ownerPhone}
+          Naalukettu Hostel · Door Portal · 24/7 Desk: {settings.ownerPhone}
         </div>
       </div>
 

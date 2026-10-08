@@ -75,7 +75,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             </div>
             <div>
               <span className="text-base font-bold tracking-tight text-slate-900">
-                PGHQ Standard
+                Naalukettu Hostel
               </span>
             </div>
           </Link>
