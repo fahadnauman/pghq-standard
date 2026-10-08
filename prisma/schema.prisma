@@ -109,6 +109,7 @@ model Room {
   floor      Floor              @relation(fields: [floorId], references: [id], onDelete: Cascade)
   beds       Bed[]
   tasks      MaintenanceTask[]
+  paymentSubmissions PaymentSubmission[]
 
   @@unique([floorId, roomNumber])
   @@index([floorId])
@@ -187,4 +188,28 @@ model MealLog {
   @@index([tenantId])
   @@index([date])
   @@map("meal_logs")
+}
+
+enum PaymentSubmissionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model PaymentSubmission {
+  id             String                  @id @default(cuid())
+  roomId         String
+  tenantName     String
+  amount         Float
+  transactionId  String
+  screenshotUrl  String?
+  status         PaymentSubmissionStatus @default(PENDING)
+  createdAt      DateTime                @default(now())
+  updatedAt      DateTime                @updatedAt
+
+  room           Room                    @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([roomId])
+  @@index([status])
+  @@map("payment_submissions")
 }

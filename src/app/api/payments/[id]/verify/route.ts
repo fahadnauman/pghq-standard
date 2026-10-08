@@ -42,12 +42,12 @@ export async function PATCH(
       // and update their paymentStatus. 
       if (status === "APPROVED") {
         const tenants = submission.room.beds
-          .map(b => b.tenant)
+          .map((b: any) => b.tenant)
           .filter(Boolean);
 
         // Find tenant by matching name roughly, or just assume if single tenant.
         // For simplicity, we update any tenant in the room whose name matches, or the first one if only one.
-        let targetTenant = tenants.find(t => t?.name.toLowerCase() === submission.tenantName.toLowerCase());
+        let targetTenant = tenants.find((t: any) => t?.name.toLowerCase() === submission.tenantName.toLowerCase());
         if (!targetTenant && tenants.length === 1) {
           targetTenant = tenants[0];
         }
