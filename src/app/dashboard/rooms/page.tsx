@@ -216,7 +216,7 @@ export default function RoomsPage() {
       {/* ── Room QR Code Placard Modal ─────────────────── */}
       <RoomQrModal
         room={selectedQrRoom}
-        propertyTitle="Sunrise PG Hostel"
+        propertyTitle="Naalukettu Hostel"
         isOpen={!!selectedQrRoom}
         onClose={() => setSelectedQrRoom(null)}
       />

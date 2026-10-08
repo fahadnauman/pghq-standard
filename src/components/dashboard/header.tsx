@@ -27,10 +27,10 @@ export default function Header({ onMenuClick }: HeaderProps) {
   };
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [activeProperty, setActiveProperty] = useState("Sunrise PG - Branch 1");
+  const [activeProperty, setActiveProperty] = useState("Naalukettu Hostel - Main Branch");
 
   const properties = [
-    "Sunrise PG - Branch 1",
+    "Naalukettu Hostel - Main Branch",
     "Greenwood Hostel - Branch 2",
     "Elite Residences - Branch 3"
   ];
@@ -132,12 +132,12 @@ export default function Header({ onMenuClick }: HeaderProps) {
 
           {/* Profile */}
           <div className="flex items-center gap-2 pl-1 pr-2 py-1 rounded-xl hover:bg-slate-100 transition-default">
-            <div className="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs shadow-2xs">
-              PG
+            <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs shadow-2xs">
+              SR
             </div>
             <div className="hidden sm:block text-left">
-              <p className="text-sm font-bold text-slate-900 leading-none">Property Owner</p>
-              <p className="text-[11px] font-medium text-slate-500 mt-0.5">Admin Access</p>
+              <p className="text-sm font-bold text-slate-900 leading-none">Shifa Rasheed</p>
+              <p className="text-[11px] font-medium text-slate-500 mt-0.5">Property Owner</p>
             </div>
           </div>
         </div>

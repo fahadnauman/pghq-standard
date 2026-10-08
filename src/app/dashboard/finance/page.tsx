@@ -52,7 +52,7 @@ export default function FinanceDashboard() {
 
   const handleWhatsAppReminder = (record: PaymentRecord) => {
     // Construct message
-    const message = `Hello ${record.tenantName},\n\nThis is a polite reminder that your rent for ${record.month} amounting to ₹${record.amount} is currently ${record.status === "OVERDUE" ? "overdue" : "pending"}. Please arrange for the payment at your earliest convenience.\n\nThank you!\nSunrise PG Hostel`;
+    const message = `Hello ${record.tenantName},\n\nThis is a polite reminder that your rent for ${record.month} amounting to ₹${record.amount} is currently ${record.status === "OVERDUE" ? "overdue" : "pending"}. Please arrange for the payment at your earliest convenience.\n\nThank you!\nNaalukettu Hostel`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };

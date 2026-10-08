@@ -352,7 +352,7 @@ function MaintenanceReportForm() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-xs font-extrabold text-slate-600 uppercase tracking-wider">
             <Building2 className="w-4 h-4 text-slate-800" />
-            <span>Sunrise PG Hostel</span>
+            <span>Naalukettu Hostel</span>
           </div>
           <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-bold text-emerald-800">
             <ShieldCheck className="w-3 h-3 text-emerald-600" />

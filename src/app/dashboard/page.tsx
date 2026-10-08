@@ -85,7 +85,7 @@ export default function DashboardPage() {
             <span>Owner Handoff Active</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-            Sunrise PG Hostel
+            Naalukettu Hostel
           </h1>
           <p className="text-sm text-slate-600">
             Live occupancy, room grid, dues collection, and property overview.
@@ -182,7 +182,7 @@ export default function DashboardPage() {
           </Link>
           <Link
             href="/dashboard/maintenance"
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition-default shadow-xs"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#2ad68f] hover:bg-[#23b276] text-[#0f2e29] font-bold text-xs transition-default shadow-xs"
           >
             <Wrench className="w-4 h-4" />
             <span>Open Maintenance Hub</span>

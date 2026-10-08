@@ -26,10 +26,10 @@
   --accent-foreground: #fdfbf7;
   --accent-hover: #3d2d27;      
 
-  /* Primary Brand - Terracotta / Brick Red */
-  --primary: #b33924;           /* earthy terracotta */
-  --primary-foreground: #ffffff;
-  --primary-hover: #962c1a;
+  /* Primary Brand - Vibrant Green */
+  --primary: #2ad68f;           /* bright green */
+  --primary-foreground: #0f2e29;
+  --primary-hover: #23b276;
 
   /* Semantic - Vibrant, high-contrast signals */
   --success: #16a34a;           /* green-600 */
