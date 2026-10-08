@@ -100,3 +100,13 @@ export interface MealRecord {
   mealType: MealType;
   status: MealStatus;
 }
+
+/* ─── Settings ───────────────────────────────────────────── */
+
+export interface OwnerSettings {
+  id?: string;
+  upiId?: string;
+  gpayNumber?: string;
+  name?: string;
+  [key: string]: any;
+}
